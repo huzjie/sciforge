@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sciforge
+  namespace: sciforge
+spec:
+  rules:
+    - host: sciforge.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: sciforge-api
+                port:
+                  number: 8000

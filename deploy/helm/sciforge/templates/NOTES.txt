@@ -1,0 +1,7 @@
+sciforge 已部署。
+
+获取服务地址：
+  kubectl port-forward svc/{{ include "sciforge.fullname" . }} 8000:8000
+
+自检：
+  curl http://localhost:8000/healthz

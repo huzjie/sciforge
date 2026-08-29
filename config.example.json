@@ -1,0 +1,26 @@
+{
+  "provider": "mock",
+  "providers": {
+    "openai": { "base_url": "https://api.openai.com/v1", "model": "gpt-4o-mini", "api_key": "" },
+    "anthropic": { "base_url": "https://api.anthropic.com", "model": "claude-sonnet-4-20250514", "api_key": "" },
+    "gemini": { "base_url": "https://generativelanguage.googleapis.com/v1beta/openai", "model": "gemini-2.0-flash", "api_key": "" },
+    "deepseek": { "base_url": "https://api.deepseek.com/v1", "model": "deepseek-chat", "api_key": "" },
+    "qwen": { "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1", "model": "qwen-plus", "api_key": "" },
+    "kimi": { "base_url": "https://api.moonshot.cn/v1", "model": "moonshot-v1-8k", "api_key": "" },
+    "glm": { "base_url": "https://open.bigmodel.cn/api/paas/v4", "model": "glm-4-flash", "api_key": "" },
+    "ollama": { "base_url": "http://localhost:11434/v1", "model": "llama3.1", "api_key": "" },
+    "mock": { "base_url": "", "model": "mock", "api_key": "" }
+  },
+  "researcher": {
+    "max_iterations": 30,
+    "cycle_minutes": 30,
+    "hypotheses_per_cycle": 3,
+    "convergence_threshold": 0.02,
+    "auto_refine": true
+  },
+  "benchmark": { "suites": ["hypothesis", "literature", "experiment", "reasoning"], "scoring": "rubric" },
+  "storage": { "path": "./data/sciforge.db", "in_memory": false },
+  "security": { "default_deny": true, "max_artifact_bytes": 10485760 },
+  "server": { "host": "0.0.0.0", "port": 8000 },
+  "logging": { "level": "INFO" }
+}

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: sciforge
+description: AI 科研智能体与自动化科学发现平台
+type: application
+version: 1.0.0
+appVersion: "1.0.0"

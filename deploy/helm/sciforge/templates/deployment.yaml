@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "sciforge.fullname" . }}
+  labels:
+    {{- include "sciforge.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "sciforge.labels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "sciforge.labels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: api
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: {{ include "sciforge.fullname" . }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}

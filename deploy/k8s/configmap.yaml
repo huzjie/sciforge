@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sciforge-config
+  namespace: sciforge
+data:
+  SCIFORGE_PROVIDER: "mock"
+  SCIFORGE_RESEARCHER__MAX_ITERATIONS: "30"
