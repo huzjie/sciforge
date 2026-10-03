@@ -17,7 +17,7 @@ classifiers = [
 ]
 
 [project.optional-dependencies]
-api = ["fastapi>=0.110.0", "uvicorn[standard]>=0.29.0"]
+api = ["fastapi>=0.142.2", "uvicorn[standard]>=0.29.0"]
 
 [tool.setuptools.packages.find]
 include = ["sciforge*"]
