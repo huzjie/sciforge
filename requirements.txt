@@ -1,4 +1,4 @@
 # 核心运行时：纯标准库，零第三方依赖
 # 可选：控制面使用 FastAPI（不安装则自动回退到纯标准库 HTTP 服务）
 fastapi>=0.110.0
-uvicorn[standard]>=0.29.0
+uvicorn[standard]>=0.54.0
